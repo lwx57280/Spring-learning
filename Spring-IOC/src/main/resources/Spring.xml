@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--setXX方法属性注入：属性注入需要注意的是在bean的配置时属性名称是setter方法的名字而不是字段名称-->
+    <bean id="helloSpring" class="com.demo.HelloSpring">
+        <property name="Who">
+            <!--此处字符串“Spring”赋值who属性-->
+            <value>Spring-learning</value>
+        </property>
+    </bean>
+    <!--构造器注入-->
+    <bean id="user" class="com.demo.User">
+        <!--构造函数参数的下标从0开始(避免出现多个构造函数具有相同的参数个数)-->
+        <constructor-arg type="java.lang.String" index="0" value="zhangGa"/>
+        <constructor-arg type="java.lang.Integer" index="1" value="20"/>
+    </bean>
+
+</beans>
