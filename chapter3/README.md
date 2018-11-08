@@ -13,11 +13,12 @@ IOC通过工厂模式创建Bean有两种方式:
 
 (2)创建静态工厂类,静态工厂方法:
 
-![静态工厂](D:\Spring\Spring-learning\chapter3\img-folder\factory.jpg)
+![静态工厂](https://github.com/lwx57280/Spring-learning/blob/master/chapter3/img-folder/factory.jpg)
+
 
 (3)在Spring.xml中配置静态工厂:
 
-![Spring.xml中配置静态工厂](chapter3/img-folder/spring-factory.jpg)
+![Spring.xml中配置静态工厂](https://github.com/lwx57280/Spring-learning/blob/master/chapter3/img-folder/spring-factory.jpg)
 
 其中：
     * factory-method指向静态方法
@@ -31,11 +32,11 @@ IOC通过工厂模式创建Bean有两种方式:
 
 (1)  创建实例工厂类,工厂方法
 
-![实例工厂方法](chapter3/img-folder/instanceFactory2.jpg)
+![实例工厂方法](https://github.com/lwx57280/Spring-learning/blob/master/chapter3/img-folder/instanceFactory2.jpg)
 
 (2)spring.xml中配置Bean:
 
-![spring.xml中配置Bean](chapter3/img-folder/instance-factory.jpg)
+![spring.xml中配置Bean](https://github.com/lwx57280/Spring-learning/blob/master/chapter3/img-folder/instance-factory.jpg)
 
 
 对比两种方式的区别:
@@ -76,7 +77,7 @@ IOC通过工厂模式创建Bean有两种方式:
 
 注意:通过property标签手动进行car的注入优先级更搞，若两种方式同时设置，一property的配置为准。
 
-![byName](chapter3/img-folder/byName.jpg)
+![byName](https://github.com/lwx57280/Spring-learning/blob/master/chapter3/img-folder/byName.jpg)
 
 
 * byType 
@@ -86,4 +87,4 @@ IOC通过工厂模式创建Bean有两种方式:
  
  (1)spring.xml配置如下:
  
- ![byType](chapter3/img-folder/byType.jpg)
+ ![byType](https://github.com/lwx57280/Spring-learning/blob/master/chapter3/img-folder/byType.jpg)
