@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--byType:通过属性对应的数据类型自动装载。-->
+    <bean id="person" class="com.learn.domain.Person" autowire="byType">
+        <property name="id" value="1"></property>
+        <property name="name" value="张三"></property>
+    </bean>
+    <bean id="car" class="com.learn.factory.StaticCarFactory" factory-method="getCar">
+        <constructor-arg value="2"></constructor-arg>
+    </bean>
+
+
+    <!--配置实例工厂创建car对象-->
+    <bean id="carFactory" class="com.learn.factory.InstanceCarFactory"></bean>
+
+    <!--通过实例工厂对象创建Car对象-->
+    <!--<bean id="car2" factory-bean="carFactory" factory-method="getCar">-->
+        <!--<constructor-arg value="2"></constructor-arg>-->
+    <!--</bean>-->
+
+
+
+</beans>
