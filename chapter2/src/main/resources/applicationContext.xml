@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!--导入外部资源文件,需要导入context命名空间-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <!--创建C3P0数据源-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="user" value="${user}"/>
+        <property name="password" value="${pwd}"/>
+        <property name="driverClass" value="${driverName}"/>
+        <property name="jdbcUrl" value="${url}"/>
+        <!--  初始化建立的连接数 -->
+        <property name="initialPoolSize" value="${initialSize}"/>
+        <!--  最大空闲时间，120秒内未被使用的连接将被丢弃 -->
+        <property name="maxIdleTime" value="${maxTime}"/>
+        <!--  当连接池耗尽，且未达到最大连接数时，一次获取的连接数 -->
+        <property name="acquireIncrement" value="2"/>
+        <!--  空闲检查时间间隔， 每隔120秒检查连接池里的空闲连接 ，单位是秒 -->
+        <property name="idleConnectionTestPeriod" value="60"/>
+    </bean>
+</beans>

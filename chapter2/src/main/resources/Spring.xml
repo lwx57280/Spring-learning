@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--setXX方法属性注入：属性注入需要注意的是在bean的配置时属性名称是setter方法的名字而不是字段名称-->
+    <!--将scope 设置为"prototype":每次调用新建一个Bean实例。 scope="prototype"-->
+    <bean id="user1" class="com.learn.domain.User" depends-on="car">
+        <property name="id" value="1"></property>
+        <property name="name" value="张三"></property>
+        <property name="age" value="23"></property>
+    </bean>
+
+    <!--Spring的继承是在对象层面进行操作的，即两个Bean来自同一个类,所以方法是一样的,不存在继承关系-->
+    <bean id="user2" class="com.learn.domain.User" parent="user1">
+        <!--覆盖name属性-->
+        <property name="name" value="李四"></property>
+    </bean>
+
+    <bean id="car2" class="com.learn.domain.Car">
+        <property name="id" value="1"></property>
+        <property name="brand" value="宝马"></property>
+    </bean>
+
+    <!-- &lt;!&ndash;构造器注入&ndash;&gt;
+     <bean id="user" class="com.demo.User">
+         &lt;!&ndash;构造函数参数的下标从0开始(避免出现多个构造函数具有相同的参数个数)&ndash;&gt;
+         <constructor-arg type="java.lang.String" index="0" value="zhangGa"/>
+         <constructor-arg type="java.lang.Integer" index="1" value="20"/>
+     </bean>-->
+
+    <!--通过p命名空间给属性赋值，同时完成依赖注入, 注意：需要引入P命名空间-->
+    <bean id="user3" class="com.learn.domain.User" p:id="1" p:name="张三" p:age="23" p:car-ref="car"></bean>
+    <bean id="car" class="com.learn.domain.Car" p:id="1" p:brand="宝马"></bean>
+
+</beans>
