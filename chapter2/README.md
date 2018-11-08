@@ -13,7 +13,6 @@
 > 5、GlobalSession:这个只在portal应用中有用，给每一个global Http session新建一个Bean实例。
 
 
-
 * Spring默认为单例
 
     <!--将scope 设置为"prototype":每次调用新建一个Bean实例。-->
@@ -24,20 +23,14 @@
     </bean>
     
     
- 
 * Spring的继承
 
   其实这里不存在方法的继承，Spring的继承是在对象层面进行操作的，即两个Bean来自同一个类,所以方法是一样的,不存在继承关系。
   
   
-  
-  
+ ![spring继承](https://github.com/lwx57280/Spring-learning/blob/master/chapter2/img-folder/spring-extends.jpg)
  
- ![spring继承](chapter2/img-folder/spring-extents2.jpg)
- 
- 可以看到，创建了两个User对象user1和user2,并且user2继承了user1的所以属性
- 
- 
+ 可以看到，创建了两个User对象user和user2,并且user2继承了user的所以属性
  
  
  
@@ -46,7 +39,7 @@
     
     
     
-![spring依赖](chapter2/img-folder/dependence1.jpg)
+![spring依赖](https://github.com/lwx57280/Spring-learning/blob/master/chapter2/img-folder/dependence1.jpg)
  
    从运行结果可知，先创建User，后创建Car,这是由Spring.xml中Bean的配置顺序来决定的，先到先得，先配置User bean,
    所以先创建了User对象。
@@ -55,7 +48,7 @@
  
    先创建Car,后创建User，因为User依赖于Car,所以必须先创建Car对象，User对象才能完成依赖。
    
- ![spring依赖](chapter2/img-folder/dependence.jpg)
+ ![spring依赖](https://github.com/lwx57280/Spring-learning/blob/master/chapter2/img-folder/dependence.jpg)
  
  
  * Spring读取外部资源
@@ -65,13 +58,17 @@
     
     （1）创建jdbc.properties：
     
-![外部资源文件](chapter2/img-folder/jdbc.properties.jpg)
+
+![外部资源文件](https://github.com/lwx57280/Spring-learning/blob/master/chapter2/img-folder/jdbc.properties.jpg)
   
   
   
 * P 命名空间
 
-![p命名空间](D:\Spring\Spring-learning\chapter2\img-folder\p.jpg)
+![User实体类](https://github.com/lwx57280/Spring-learning/blob/master/chapter2/img-folder/user.jpg)
+
+
+![p命名空间](https://github.com/lwx57280/Spring-learning/blob/master/chapter2/img-folder/p.jpg)
 
 
 * 总结
