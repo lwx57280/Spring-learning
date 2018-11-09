@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 配置UserController-->
+   <!-- <bean id="userController" class="com.learn.controller.UserController">
+        <property name="userService" ref="userService"></property>
+    </bean>
+    &lt;!&ndash; 配置 UserService&ndash;&gt;
+    <bean id="userService" class="com.learn.service.impl.UserServiceImpl">
+        <property name="userDAO" ref="userDAO"></property>
+    </bean>
+    &lt;!&ndash; 配置 UserDAO&ndash;&gt;
+    <bean id="userDAO" class="com.learn.mapper.impl.UserDAOImpl"></bean>
+-->
+</beans>
